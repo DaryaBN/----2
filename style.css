@@ -1060,7 +1060,12 @@ button[name="button_mail"]:hover {
 }
 @media (max-width: 830px) {
 
-  body{min-height:100vh}
+  html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
 
   .novebar-menu{
     display: none;
@@ -1330,6 +1335,13 @@ button[name="button_mail"]:hover {
   }
   .catalog_of_services_text{
     font-size: 10px;
+  }
+  .business_by_key{
+    background-color: #84848481;
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+    margin: 30px auto 0 auto;
   }
   
 }
