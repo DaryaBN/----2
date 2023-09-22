@@ -1065,8 +1065,12 @@ button[name="button_mail"]:hover {
   }
   body {
     min-height: 100%;
-    background-size: cover;;
-    background: linear-gradient( rgba(216, 215, 215, 0.8), rgba(0, 0, 0, 0.489) ), url('img/imgonline-com-ua-Resize-XalMCGu4Uc.jpg');
+    background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5) ), url('img/imgonline-com-ua-Resize-XalMCGu4Uc.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
   }
 
   .novebar-menu{
