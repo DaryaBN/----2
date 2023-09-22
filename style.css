@@ -7,7 +7,7 @@ body {
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	color: #fff;
+	color: #282828;
   font-weight: 500;
   font-family: 'Lato', sans-serif;
   font-family: 'Oranienbaum', serif;
@@ -173,7 +173,7 @@ footer{
 	display: block;
 }
 .slide__descr {
-  color: #f2f2f2;
+  /* color: #f2f2f2; */
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -194,7 +194,7 @@ footer{
   width: 850px;
   margin: 30px auto 80px auto;
   text-align: center;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 .numbertext {
   color: #f2f2f2;
@@ -241,7 +241,7 @@ footer{
   padding-left: 29px;
   font-size: 14px;
   font-weight: 500;
-  color: #ffffff;
+  /* color: #ffffff; */
   text-align: center;
   text-transform: uppercase;
 }
@@ -308,7 +308,7 @@ footer{
   text-transform: uppercase;
   font-size: 18px;
   padding: 20px 25px;
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   margin-top: 40px;
   display: table;
@@ -567,7 +567,7 @@ select:after {
 .fullscreen_title {
   font-size: 70px;
   margin: 0px 0px 20px 0px;
-  color: #f4eeee;
+  /* color: #f4eeee; */
 
   /* появляется к верху */
 
@@ -581,7 +581,7 @@ select:after {
 .fullscreen_text {
   font-size: 30px;
   line-height: 35px;
-  color: #f6f6f6;
+  /* color: #f6f6f6; */
 
   transform: translate(0px 120%);
   opacity: 1;
@@ -768,7 +768,7 @@ text {
 }
 .moments_image_number{
   position: relative;
-  color: #fc0d0d;
+  /* color: #ffffff; */
   top: -8px;
   font-size: 130px;
   z-index: 2;
@@ -904,7 +904,7 @@ border-radius: 12px;
   text-transform: uppercase;
   font-size: 18px;
   padding: 20px 25px;
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   resize: none;
   margin-top: 20px;
@@ -996,12 +996,12 @@ button[name="button_mail"]:hover {
   font-weight: normal;
   margin-bottom: 20px;
   height: 70px;
-  color: #fff;
+  /* color: #fff; */
 }
 .catalog_of_services {
   width: 70%;
   height: auto;
-  background: #282827e3;
+  background: #d9d9d6e3;
   border-radius: 6px;
   position: absolute;
   top: 50%;
@@ -1191,7 +1191,7 @@ button[name="button_mail"]:hover {
     width: 300px;
     margin: 30px auto 0px auto;
     text-align: center;
-    color: #ffffff;
+    /* color: #ffffff; */
   }
   .map_color{
     /* width: 259px; */
@@ -1319,7 +1319,7 @@ button[name="button_mail"]:hover {
     font-weight: normal;
     margin-bottom: 10px;
     height: 70px;
-    color: #fff;
+    /* color: #fff; */
   }
   .catalog_of_services_info {
     display: block;
@@ -1329,6 +1329,7 @@ button[name="button_mail"]:hover {
     width: 100%;
     height: 100px;
     margin-right: 20px;
+    display: none;
   }
   .courses_text{
     font-size: 10px;
@@ -1336,7 +1337,7 @@ button[name="button_mail"]:hover {
     margin: 15px 0px 0px 25px;
   }
   .courses_text li{
-    font-size: 8px;
+    font-size: 5px;
     margin-bottom: 8px;
   }
   .catalog_of_services_text{
