@@ -1065,6 +1065,8 @@ button[name="button_mail"]:hover {
   }
   body {
     min-height: 100%;
+    background-size: cover;;
+    background: linear-gradient( rgba(216, 215, 215, 0.8), rgba(0, 0, 0, 0.489) ), url('img/imgonline-com-ua-Resize-XalMCGu4Uc.jpg');
   }
 
   .novebar-menu{
@@ -1250,7 +1252,7 @@ button[name="button_mail"]:hover {
     padding-bottom: 0px;
   }
   .textarea_comements_blok{
-    width: 300px;
+    width: 94%;
   }
   ._container {
     max-width: 1400px;
