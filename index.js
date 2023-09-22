@@ -171,10 +171,17 @@ async function sendEmailTelegram(event) {
     formSendResult.textContent = '';
     const modalElem = document.querySelector('.modal');
     const modalElem_result = document.querySelector('.form__send-result_blok');
-
-    const { name, phone, pass, Data, Time, Service} = Object.fromEntries(new FormData(form).entries());
+    let a = document.getElementById('name_City').value;
+    let b = document.getElementById('pass_City').value;
+    let c = document.getElementById('phone_City').value;
+    let d = document.getElementById('name_C').value;
+    let k = document.getElementById('pass_C').value;
+    let l = document.getElementById('phone_C').value;
     
-    const text = `Заявка с сайта!\nимя: ${name}!\nТелефон: ${phone}\nГород: ${pass}\nДата: ${Data}\nВремя ${Time}\nУслуга: ${Service}`;
+    const {Data, Time, Service} = Object.fromEntries(new FormData(form).entries());
+    
+    const text = `Заявка с сайта!\nимя: ${a} ${d}\nТелефон: ${c} ${k}\nГород: ${b} ${l}\nДата: ${Data}\nВремя ${Time}\nУслуга: ${Service}`;
+    console.log(text)
 
  
     try {

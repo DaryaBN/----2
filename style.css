@@ -136,7 +136,7 @@ footer{
 	margin: 0 auto;
 	position: relative;
 	width: 100%;
-  height: 350px;
+  height: 500px;
   background-size: cover;
 }
 .exmplSlieder{
@@ -144,7 +144,7 @@ footer{
 }
 .slide__img {
   width: 100%;
-  height: 350px;
+  height: 500px;
   vertical-align: middle; 
 } 
 .slideshow__nav {
@@ -550,8 +550,8 @@ select:after {
 ._container {
   
   max-width: 1400px;
-  padding: 0px 30px;
-  margin: 0px 30px;
+  padding: 0px 0px 0px 90px;
+  margin: 0 auto;
 }
 .fullscreen {
   position: relative;
@@ -881,6 +881,7 @@ text {
 .textarea_comements{
   width: 85%;
   margin: 0px auto 30px auto;
+  padding-left: 90px;
 }
 .textarea_comements_blok{
   width: 100%;
@@ -1350,5 +1351,15 @@ button[name="button_mail"]:hover {
     width: 250px;
     margin: 30px auto 0 auto;
   }
-  
+  .services_blok_anim_left{
+    transition: all 0.8s ease 0.3s;
+  }
+
+  .services_blok_anim_right{
+    transition: all 0.8s ease 0.3s;
+  }
+  .textarea_comements{
+    padding-left: 0px;
+  }
+
 }
