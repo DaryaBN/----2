@@ -1084,6 +1084,18 @@ button[name="button_mail"]:hover {
     position: relative;
     display: inline-block;
   }
+  .menu {
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 130px;
+    height: auto;
+    border-radius: 5%;
+    padding: 15px;
+    background: #2b2a2a5b;
+    z-index: 1;
+    transition: transform 0.5s; 
+  }
   .menu-btn {
     width: 30px;
     height: 30px;
@@ -1107,18 +1119,6 @@ button[name="button_mail"]:hover {
   .menu-btn span:nth-of-type(3) {
     top: calc(50% + 5px);
   }
-  .menu {
-    position: absolute;
-    display: none;
-    right: 0;
-    width: 130px;
-    height: auto;
-    border-radius: 5%;
-    padding: 15px;
-    background: #2b2a2a5b;
-    z-index: 1;
-    transition: transform 0.5s; 
-  }
   .menu li {
     list-style-type: none;
     padding: 0px 20px 15px 0px;
@@ -1132,6 +1132,9 @@ button[name="button_mail"]:hover {
     opacity: 0.6;
     text-align:left;
     transition: all .07s ease-in-out;
+  }
+  .menu.active {
+    transform: translateX(0);
   }
   .menu a:hover {opacity: 1;}
   .dropdown:hover .menu {display: block;}

@@ -94,11 +94,11 @@ if (animItems.length > 0) {
     animOnScroll();
   }, 300);
 }
-const modelController = ({ modal, btnOpen, btnClose, btnCloseMobile, menu }) => {
+const modelController = ({ modal, btnOpen, btnClose, btnCloseMobile, }) => {
     const buttonElems = document.querySelectorAll(btnOpen);
     const modalElem = document.querySelector(modal);
     const buttonElemsMobile = document.querySelector(btnCloseMobile);
-    const menuClose = document.querySelector(menu);
+    // const menuClose = document.querySelector(menu);
     // const elFooter = document.body.querySelector('footer');
     
 
@@ -117,8 +117,8 @@ const closeModal = (event) => {
     target.closest(btnCloseMobile)
     ) {
     modalElem.style.opacity = 0;
-    menuClose.style.visibility = 'visible'
-    menuClose.style.opacity = 1;
+    // menuClose.style.visibility = 'visible'
+    // menuClose.style.opacity = 1;
     // elFooter.style.visibility = 'visible'
     // elFooter.style.opacity = 1;
     setTimeout(() => {
@@ -130,8 +130,8 @@ const closeModal = (event) => {
 const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
-    menuClose.style.visibility = 'hidden';
-    menuClose.style.opacity = 0;
+    // menuClose.style.visibility = 'hidden';
+    // menuClose.style.opacity = 0;
     // elFooter.style.visibility = 'hidden';
     // elFooter.style.opacity = 0;
 };
@@ -147,8 +147,15 @@ modal: '.application',
 btnOpen: '.buttonOpen',
 btnClose: '.SingInBlok1280',
 btnCloseMobile: '.SingInHandler',
-menu:'.menu',
+// menu:'.open_Menu',
 });
+
+let menuBtn = document.querySelector('.menu-btn');
+let menu = document.querySelector('.menu');
+menuBtn.addEventListener('click', function(){
+	menu.classList.toggle('active');
+})
+
 
 const TELEGRAM_BOT_TOKEN = '5756450089:AAHvxRuBQjuTez7CbSAL5DFCPEwMmo7lZXg';
 const TELEGRAM_CHAT_ID = '-1001881302219';
