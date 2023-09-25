@@ -136,16 +136,21 @@ footer{
 	margin: 0 auto;
 	position: relative;
 	width: 100%;
-  height: 500px;
-  background-size: cover;
+  /* height: 700px; */
+  padding: 0;
+  /* background-size: cover; */
 }
 .exmplSlieder{
     overflow: hidden;
+    text-align: center;
 }
 .slide__img {
   width: 100%;
-  height: 500px;
-  vertical-align: middle; 
+  /* height: 700px; */
+  /* vertical-align: middle; */
+  margin-left: auto;
+  margin-right: auto;
+
 } 
 .slideshow__nav {
   cursor: pointer;
@@ -421,7 +426,7 @@ select:after {
 .services_blok_anim_left{
   transform: translate(-40%, 0px);
   opacity: 0;
-  transition: all 1.9s ease 0.3s;
+  transition: all 0.9s ease 0.3s;
 }
 .services_blok_anim_left._active{
   opacity: 1;
@@ -430,7 +435,7 @@ select:after {
 .services_blok_anim_right{
   transform: translate(40%, 0px);
   opacity: 0;
-  transition: all 1.9s ease 0.3s;
+  transition: all 0.9s ease 0.3s;
 }
 .services_blok_anim_right._active{
   opacity: 1;
@@ -612,7 +617,7 @@ text {
 }
 .moments {
   /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); */
-  background: linear-gradient(to right, #9c9b9ae0, #70706cec);
+  background: linear-gradient(to right, #e6e5e49c, #d7d7d622);
   /* background-color: rgba(136, 135, 132, 0.713); */
   padding: 0px 0;
 }
@@ -990,6 +995,19 @@ button[name="button_mail"]:hover {
   height: 500px;
   margin: 10px;
 }
+.poz{
+  position: absolute;
+  top: -524px;
+  left: 0;
+}
+.poz1{
+  position: absolute;
+  top:-524px; ;
+  left: 0px;
+}
+.no_Blok{
+  display: block;
+}
 .neme_catalog{
   width:  250px;
   padding-left: 10px;
@@ -1051,7 +1069,7 @@ button[name="button_mail"]:hover {
   background-color: #84848481;
   border-radius: 15px;
   padding: 10px;
-  width: 600px;
+  width: 900px;
   margin: 30px auto 0 auto;
 }
 .business_by_key_text{
@@ -1168,12 +1186,12 @@ button[name="button_mail"]:hover {
     padding-right: 2px;
     padding-left: 2px;   
   }
-  .slideshow {
+  /* .slideshow {
     height: 180px;
-  }
-  .slide__img {
+  } */
+  /* .slide__img {
     height: 180px;
-  }
+  } */
   .services_blok{
     width: 350px;
     margin: 0 auto 0 auto;
@@ -1266,12 +1284,12 @@ button[name="button_mail"]:hover {
   }
   .wrapper {
     width: 100%;
-    height: 300px;
+    height: 10px;
     background-size: cover;
   }
   .fullscreen_image {
     width: 100%;
-    height: 300px;
+    height: 10px;
     vertical-align: middle; 
   }
   .fullscreen_image img {
@@ -1312,6 +1330,19 @@ button[name="button_mail"]:hover {
     width:  100%;
     height: 400px;
     margin: 10px auto 5px auto;
+   }
+  .poz{
+    position: absolute;
+    top: -420px;
+    left: 0;
+  }
+  .poz1{
+    position: absolute;
+    top: -420px;
+    left: 0;
+  }
+  .no_Blok{
+    display: none;
   }
   .neme_catalog{
     width:  150px;
@@ -1360,6 +1391,10 @@ button[name="button_mail"]:hover {
   }
   .textarea_comements{
     padding-left: 0px;
+  }
+  .about_the_company{
+    margin-top: 200px;
+    width: 100%;
   }
 
 }
