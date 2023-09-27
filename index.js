@@ -282,13 +282,13 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
   try{
   const videoElements = document.querySelectorAll(".slide__img");
   for (let i = 0; i < videoElements.length; i++) {
-  if (videoElements[1].playing) {
+  if (videoElements[i].playing) {
   // video is already playing so do nothing
   console.log('Playing');
   }
   else {
   // video is not playing so play video now
-  videoElements[1].play();
+  videoElements[i].play();
   console.log('Not Playing');
   }
   }
