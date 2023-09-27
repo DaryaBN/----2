@@ -1310,6 +1310,9 @@ textarea:focus, input:focus{
   width: 100%;
   display: flex;
 }
+input[type='text']::placeholder {
+  font-size: 15px;
+}
 @media (max-width: 830px) {
 
   html {
@@ -1676,5 +1679,8 @@ textarea:focus, input:focus{
   .send-result_blok{
     width: 200px;
     margin: 0 auto 0 auto;
+  }
+  input[type='text']::placeholder {
+    font-size: 14px;
   }
 }
