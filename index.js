@@ -275,7 +275,9 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
     return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
   }
 });
-document.body.on('click touchstart', function () {
+const bodyElement = document.body;
+console.log(bodyElement);
+window.addEventListener('click touchstart', function () {
   const videoElement = document.getElementById('vido');
   if (videoElement.playing) {
     // video is already playing so do nothing
@@ -286,6 +288,7 @@ document.body.on('click touchstart', function () {
     videoElement.play();
   }
 });
+
 
 // Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
 //   get: function () {
