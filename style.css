@@ -1313,6 +1313,14 @@ textarea:focus, input:focus{
 input[type='text']::placeholder {
   font-size: 15px;
 }
+.contacts_services_phone_text{
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;   
+  -khtml-user-select: none;    
+  -moz-user-select: none;      
+  -ms-user-select: none;      
+  user-select: none; 
+}
 @media (max-width: 830px) {
 
   html {

@@ -272,59 +272,28 @@ if(button_send) {
 
 Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
   get: function () {
-    return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+  return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
   }
-});
-const bodyElement = document.body;
-console.log(bodyElement);
-window.addEventListener('click touchstart', function () {
-  const videoElement = document.getElementById('vido');
-  if (videoElement.playing) {
-    // video is already playing so do nothing
+  });
+  
+  document.body.addEventListener("click", playVideoOnLowPower);
+  document.body.addEventListener("touchstart", playVideoOnLowPower);
+  function playVideoOnLowPower(){
+  try{
+  const videoElements = document.querySelectorAll(".slide__img");
+  for (let i = 0; i < videoElements.length; i++) {
+  if (videoElements[1].playing) {
+  // video is already playing so do nothing
+  console.log('Playing');
   }
   else {
-    // video is not playing
-    // so play video now
-    videoElement.play();
+  // video is not playing so play video now
+  videoElements[1].play();
+  console.log('Not Playing');
   }
-});
-
-
-// Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-//   get: function () {
-//   return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-//   }
-//   });
-  
-//   document.body.addEventListener("click", playVideoOnLowPower);
-//   document.body.addEventListener("touchstart", playVideoOnLowPower);
-//   function playVideoOnLowPower(){
-//   try{
-//   const videoElements = document.querySelectorAll(".vid");
-//   for (let i = 0; i < videoElements.length; i++) {
-//   if (videoElements[i].playing) {
-//   // video is already playing so do nothing
-//   console.log('Playing');
-//   }
-//   else {
-//   // video is not playing so play video now
-//   videoElements[i].play();
-//   console.log('Not Playing');
-//   }
-//   }
-//   }
-//   catch(err) {
-//   console.log(err);
-// }
-// }
-// $('body').on('click touchstart', function () {
-//   const videoElement = document.getElementById('home_video');
-//   if (videoElement.playing) {
-//       // video is already playing so do nothing
-//   }
-//   else {
-//       // video is not playing
-//       // so play video now
-//       videoElement.play();
-//   }
-// });
+  }
+  }
+  catch(err) {
+  console.log(err);
+  }
+  }
