@@ -272,18 +272,18 @@ if(button_send) {
 
 Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
   get: function () {
-      return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+    return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
   }
 });
 document.body.on('click touchstart', function () {
-  const videoElement = document.getElementById('vid');
+  const videoElement = document.getElementById('vido');
   if (videoElement.playing) {
-      // video is already playing so do nothing
+    // video is already playing so do nothing
   }
   else {
-      // video is not playing
-      // so play video now
-      videoElement.play();
+    // video is not playing
+    // so play video now
+    videoElement.play();
   }
 });
 
