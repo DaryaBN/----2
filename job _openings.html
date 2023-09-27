@@ -9,6 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Oranienbaum&family=Playfair+Display+SC&display=swap" rel="stylesheet">    
 	<title>Вакансии</title>
+    <link rel="shortcut icon" href="/img/бизнес сити лого.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/img/бизнес сити лого.png" />
+    <meta name="theme-color" content="#ffffff" />
+        <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="img/бизнес сити лого.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="stylesheet" href="/style.css" type="text/css"/>
 </head>
     <body>
@@ -20,7 +31,7 @@
                         <li><a href="company.html">О компании</a></li>
                         <li><a href="index.html#services">Услуги</a></li>
                         <li><a href="#job_box">Вакансии</a></li>
-                        <li><a href="index.html#map">Контакты</a></li>
+                        <li><a class="contacts-mod-wid">Контакты</a></li>
                     </ul> 
                     <div class="novebar_collback">  
                         <button class="buttonOpen" type="button" name="run_script">Оставить заявку</button>
@@ -35,7 +46,7 @@
                             <li><a href="company.html">О компании</a></li>
                               <li><a href ="index.html#services">Услуги</a></li>
                               <li><a href="job _openings.html">Вакансии</a></li>
-                              <li><a href="index.html#map">Контакты</a></li>
+                              <li><a class="contacts-mod-wid">Контакты</a></li>
                               <li><a  class="collback buttonOpen">Оставить заявку</a></li>
                     </div>
                     </div>
@@ -45,7 +56,9 @@
         <main>
             <div class="wrapper">
               <div class="fullscreen_image">
-                <video  autoplay="autoplay" loop="loop" class="slide__img" src="/img/найти работу.mp4" controls></video>
+                <video autoplay muted loop class="slide__img">
+                    <source type="video/mp4"  src="/img/15.mp4">
+                </video>
               </div>
             </div>
             <div class="about_the_company">
@@ -53,12 +66,17 @@
                     <div class="text_item _anim-items">
                         <p class="_anim-show">
                             Мы являемся компанией, специализирующейся на аутсорсинге и всегда в поиске талантливых кандидатов для как для нашей так и для других компаний, 
-                            с которыми мы сотрудничаем. Мы предлагаем разнообразные вакансии в различных отраслях и всегда заинтересованы в привлечении мотивированных сотрудников.
+                            с которыми мы сотрудничаем. 
+                            Мы предлагаем разнообразные вакансии в различных отраслях и всегда заинтересованы в привлечении мотивированных сотрудников.
+                            </p><p class="_anim-show">
                             Если вы заинтересованы в работе , пожалуйста, заполните форму на нашем сайте или отправьте нам свое резюме по электронной почте.
-                             Мы гарантируем конфиденциальность ваших данных и обязуемся рассмотреть вашу заявку или резюме с должным вниманием и дать Вам ответ в ближайшее время.
+                            Мы гарантируем конфиденциальность ваших данных и обязуемся рассмотреть вашу заявку или резюме с должным вниманием и дать Вам ответ в ближайшее время.
+                            </p><p class="_anim-show">
                             Мы ценим каждого кандидата и стараемся предоставить лучшие возможности для развития и карьерного роста. 
+                            </p><p class="_anim-show">
                             Если ваша кандидатура соответствует нашим требованиям, мы будем рады пригласить вас на собеседование, чтобы обсудить возможности сотрудничества.
-                            Не упустите шанс присоединиться к нашей команде и раскрыть свой потенциал вместе с нами. Отправьте нам свою заявку или резюме сегодня!
+                            Не упустите шанс присоединиться к нашей команде и раскрыть свой потенциал вместе с нами. 
+                            Отправьте нам свою заявку или резюме сегодня!
                         </p>
                     </div>
                 </div>
@@ -74,10 +92,60 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="application modal">
+        <div class="contakt-info-modal">
+            <div class="contacts_blok_mod">
+                <div class="close_contakt-info-modal">
+                    <img
+                    class="catalog_of_services_close"
+                    src="/img/Vectorкрестик.svg"
+                    alt="закрыть"
+                    />
+                </div>
+            <div class="map_contacts" >
+            <div class="map_color">
+							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A24898da903031dd8d7685e8ae6477f368d7d78ba692ba0a55de0cb4f8873c129&amp;width=400&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+            <div class="contacts_blok">
+                <div class="contacts_services">КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
+                <div class="contacts_services_line"></div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/место.png" />
+                    </div>
+                    <div class="contacts_services_phone_text">
+                    Ленина 92, БЦ "Славяновский плаза"
+                    </div>
+                </div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/тел.jpg" />
+                    </div>
+                    <div class="contacts_services_phone_text">+7 (993) 501-06-28</div>
+                </div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/почта.png" />
+                    </div>
+                    <div class="contacts_services_phone_text">
+                    business.city59@gmail.com
+                    </div>
+                </div>
+                <div class="contacts_services_text">Мы в социальных сетях:</div>
+                <div class="contacts_services_icons">
+                    <a
+                    class="contacts_services_telegrem"
+                    href="https://t.me/Business_city59"
+                    >
+                    <img src="/img/тг.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+            <div class="application modal opacity_m">
                 <div class="form_modal">
-                <form class="form">
+                <form id="form">
                         <div class="form_close">
                         <div>
                         <div class="form_title">Закажите обратный звонок и наш консультант свяжется с вами</div>
@@ -180,20 +248,21 @@
                         <label for="phone">Телефон:</label>
                         </div>
                         <div class="form2">
-                        <input type="phoneNumber" id="phone_C" name="number_phone" class="phone_req _phone" placeholder="+7 (999) 999-99-99" pattern="(\+?[0-9\s\-\(\)]+)" required/>
+                        <input type="text" id="phone_C" name="number_phone" class="tel" placeholder="+7(000)000-00-00" required/>
                         </div>
                     </div>
                     <div class="form__submit-button">
-                        <button type="submit" class="more-button" style="cursor: pointer">
+                        <button type="submit" id="bt_send" class="more-button" style="cursor: pointer">
                             оставить заявку
                         </button>
                     </div>
                     </div>  
                 </form>
             </div>
-            <div class="form__send-result_blok">
+            <div class="form__send-result_blok_web">
                 <p class="send-result_blok">Спасибо за ваше сообщение! Мы свяжемся с вами в выбранное вами время.</p>
             </div>
+            <footer>
             <p class="footer-content">ООО "Бизнес Сити" 2023. Город Пермь. Образовательная деятельность.</p>
             <div class="footer-links">
                 <a href="#"><img src="img/free-png.ru-311.png" alt="ВКонтакте"></a>

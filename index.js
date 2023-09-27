@@ -64,7 +64,7 @@ if (animItems.length > 0) {
       const animItem = animItems[index];
       const animItemHeight = animItem.offsetHeight;
       const animItemOffSet = offset(animItem).top;
-      const animStart = 4;
+      const animStart = 1000;
 
       let animItemPoint = window.innerHeight - animItemHeight / animStart;
       if (animItemHeight > window.innerHeight) {
@@ -89,65 +89,71 @@ if (animItems.length > 0) {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   }
-
+ 
+//   animOnScroll();
   setTimeout(() => {
     animOnScroll();
   }, 300);
 }
-const modelController = ({ modal, btnOpen, btnClose, btnCloseMobile, }) => {
-    const buttonElems = document.querySelectorAll(btnOpen);
-    const modalElem = document.querySelector(modal);
-    const buttonElemsMobile = document.querySelector(btnCloseMobile);
-    // const menuClose = document.querySelector(menu);
-    // const elFooter = document.body.querySelector('footer');
-    
 
-    modalElem.style.cssText = `
+
+const modelController = ({ modal, btnOpen, btnClose, menu, time = 300 }) => {
+  const buttonElems = document.querySelectorAll(btnOpen);
+  const modalElem = document.querySelector(modal);
+  const men = document.querySelector(menu);
+
+  modalElem.style.cssText = `
     display: flex;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 300ms ease-in-out;
-    `;
-  
-const closeModal = (event) => {
-    const { target } = event;
-    if (
-    target === modalElem ||
-    target.closest(btnClose) ||
-    target.closest(btnCloseMobile)
-    ) {
-    modalElem.style.opacity = 0;
-    // menuClose.style.visibility = 'visible'
-    // menuClose.style.opacity = 1;
-    // elFooter.style.visibility = 'visible'
-    // elFooter.style.opacity = 1;
-    setTimeout(() => {
-        modalElem.style.visibility = 'hidden';
-    }, 300);
-    }
-};
+    transition: opacity ${time}ms ease-in-out;
+  `;
 
-const openModal = () => {
+  const closeModal = event => {
+    const target = event.target;
+
+    if (
+      target === modalElem ||
+      (btnClose && target.closest(btnClose)) ||
+      event.code === 'Escape'
+      ) {
+      
+      modalElem.style.opacity = 0;
+      men.style.visibility = 'visible';
+      men.style.opacity = 1;
+      setTimeout(() => {
+        modalElem.style.visibility = 'hidden';
+      }, time);
+
+      window.removeEventListener('keydown', closeModal);
+    }
+  }
+
+  const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
-    // menuClose.style.visibility = 'hidden';
-    // menuClose.style.opacity = 0;
-    // elFooter.style.visibility = 'hidden';
-    // elFooter.style.opacity = 0;
-};
+    men.style.visibility = 'hidden';
+    men.style.opacity = 0;
+    window.addEventListener('keydown', closeModal)
+  };
 
-buttonElems.forEach((btnOp) => {
-    btnOp.addEventListener('click', openModal);
-});
-modalElem.addEventListener('click', closeModal);
-// buttonElemsMobile.addEventListener('touchmove', closeModal);
+  buttonElems.forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+
+  modalElem.addEventListener('click', closeModal);
 };
 modelController({
 modal: '.application',
 btnOpen: '.buttonOpen',
 btnClose: '.SingInBlok1280',
-btnCloseMobile: '.SingInHandler',
-// menu:'.open_Menu',
+menu: '.menu'
+});
+modelController({
+  modal: '.contakt-info-modal',
+  btnOpen: '.contacts-mod-wid',
+  btnClose: '.catalog_of_services_close',
+  menu: '.menu'
 });
 
 let menuBtn = document.querySelector('.menu-btn');
@@ -156,77 +162,184 @@ menuBtn.addEventListener('click', function(){
 	menu.classList.toggle('active');
 })
 
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('.tel'), function(input) {
+      var keyCode;
+      function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+          this.value = new_value;
+        }
+        if (event.type == "blur" && this.value.length < 5) {
+          this.value = "";
+        }
+      }
+  
+      input.addEventListener("input", mask, false);
+      input.addEventListener("focus", mask, false);
+      input.addEventListener("blur", mask, false);
+      input.addEventListener("keydown", mask, false);
+  
+    });
+  
+});
 
-const TELEGRAM_BOT_TOKEN = '5756450089:AAHvxRuBQjuTez7CbSAL5DFCPEwMmo7lZXg';
+const TELEGRAM_BOT_TOKEN = '6447117307:AAH7HztVqr5kIgkb0kSxHAeglxoB74-8-5k';
 const TELEGRAM_CHAT_ID = '-1001881302219';
 const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
 
-addEventListener('submit', 
-async function sendEmailTelegram(event) {
-    event.preventDefault();
+const button_send = document.getElementById('bt_send')
+const form_send = document.getElementById('form');
 
-    const form = event.target;
-    const formBtn = document.querySelector('.form__submit-button button')
-    const formSendResult = document.querySelector('.form__send-result')
-    formSendResult.textContent = '';
-    const modalElem = document.querySelector('.modal');
-    const modalElem_result = document.querySelector('.form__send-result_blok');
-    let a = document.getElementById('name_City').value;
-    let b = document.getElementById('pass_City').value;
-    let c = document.getElementById('phone_City').value;
-    let d = document.getElementById('name_C').value;
-    let k = document.getElementById('pass_C').value;
-    let l = document.getElementById('phone_C').value;
+if(button_send) {
+    form_send.addEventListener('submit', 
+      async function sendEmailTelegram(event) {
+      event.preventDefault();
+      const form = event.target;
+      let name_send = document.getElementById('name_C').value;
+      let phone_send = document.getElementById('phone_C').value;
+      let city_send = document.getElementById('pass_C').value;
+      let data_send = document.getElementById('formData').value;
+      let time_send = document.getElementById('formTime').value;
+      let servise_send = document.getElementById('formService').value;
+
+      const opacity_mod = document.querySelector('.opacity_m');
+      const men_br = document.querySelector('.menu')
+
+
+      const res_send = document.querySelector('.send-result_blok')
+      const modalElem_res_send = document.querySelector('.form__send-result_blok_web');
     
-    const {Data, Time, Service} = Object.fromEntries(new FormData(form).entries());
+      const text_webpage = `Заявка с сайта!\nимя: ${name_send}\nТелефон: ${phone_send}\nГород: ${city_send} \nДата: ${data_send}\nВремя ${time_send}\nУслуга: ${servise_send}`;
+      console.log(text_webpage)
+      try {
+        button_send.textContent = 'Loading...';
+        const response = await fetch(API, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: text_webpage,
+          })
+        })
+        if (response.ok) {
+          modalElem_res_send.style.cssText = `
+          display: flex;
+          visibility: visible;
+          opacity: 1;
+          `
+          setTimeout(() => modalElem_res_send.style.display = 'none', 3000);
+          opacity_mod.style.visibility = 'hidden';
+          // setTimeout(() => opacity_mod.style.display = 'none', 3000);
+          opacity_mod.style.opacity = 0;
+          men_br.style.visibility = 'visible';
+          men_br.style.opacity = 1;
+          form.reset()
+        } else {
+          throw new Error(response.statusText);
+        }
+      } catch (error) {
+          console.error(error);
+          res_send.textContent = 'Заявка не отправлена! Попробуйте позже.';
+          res_send.style.color = 'red';
+
+       } finally {
+          button_send.textContent = 'Отправить';
+      }
+  })
+}
+
+// const TELEGRAM_BOT_TOKEN = '6447117307:AAH7HztVqr5kIgkb0kSxHAeglxoB74-8-5k';
+// const TELEGRAM_CHAT_ID = '-1001881302219';
+// const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+// addEventListener('submit', 
+// async function sendEmailTelegram(event) {
+//     event.preventDefault();
+
+//     const form = event.target;
+//     const formBtn = document.querySelector('.form__submit-button button')
+//     const formSendResult = document.querySelector('.form__send-result')
+//     formSendResult.textContent = '';
+//     const modalElem = document.querySelector('.modal');
+//     const modalElem_result = document.querySelector('.form__send-result_blok');
+//     let a = document.getElementById('name_City').value;
+//     let b = document.getElementById('pass_City').value;
+//     let c = document.getElementById('phone_City').value;
+//     let d = document.getElementById('name_C').value;
+//     let k = document.getElementById('pass_C').value;
+//     let l = document.getElementById('phone_C').value;
     
-    const text = `Заявка с сайта!\nимя: ${a} ${d}\nТелефон: ${c} ${k}\nГород: ${b} ${l}\nДата: ${Data}\nВремя ${Time}\nУслуга: ${Service}`;
-    console.log(text)
+//     const {Data, Time, Service} = Object.fromEntries(new FormData(form).entries());
+    
+//     const text = `Заявка с сайта!\nимя: ${a} ${d}\nТелефон: ${c} ${l}\nГород: ${b} ${k}\nДата: ${Data}\nВремя ${Time}\nУслуга: ${Service}`;
+//     console.log(text)
 
  
-    try {
-        formBtn.textContent = 'Loading...';
+//     try {
+//         formBtn.textContent = 'Loading...';
 
-        const response = await fetch(API, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
-                text,
-            })
-        })
+//         const response = await fetch(API, {
+//             method: "POST",
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 chat_id: TELEGRAM_CHAT_ID,
+//                 text,
+//             })
+//         })
         
-        if (response.ok) {
-            formSendResult.textContent = 'Спасибо за ваше обращение! Мы свяжемся с вами в выбранное вами время.';
-            modalElem.style.cssText = `
-                display: flex;
-                visibility: hidden;
-                opacity: 0;
-                transition: opacity 300ms ease-in-out;
-            `;
-            modalElem_result.style.cssText = `
-            display: flex;
-            visibility: visible;
-            opacity: 1;
-            `
-            setTimeout(() => modalElem_result.style.display = 'none', 3000);
+//         if (response.ok) {
+//             formSendResult.textContent = 'Спасибо за ваше обращение! Мы свяжемся с вами в выбранное вами время.';
+//             modalElem.style.cssText = `
+//                 display: flex;
+//                 visibility: hidden;
+//                 opacity: 0;
+//                 transition: opacity 300ms ease-in-out;
+//             `;
+//             modalElem_result.style.cssText = `
+//             display: flex;
+//             visibility: visible;
+//             opacity: 1;
+//             `
+//             setTimeout(() => modalElem_result.style.display = 'none', 3000);
             
-            form.reset()
-        } else {
-            throw new Error(response.statusText);
-        }
+//             form.reset()
+//         } else {
+//             throw new Error(response.statusText);
+//         }
 
-    } catch (error) {
-        console.error(error);
-        formSendResult.textContent = 'Анкета не отправлена! Попробуйте позже.';
-        formSendResult.style.color = 'red';
+//     } catch (error) {
+//         console.error(error);
+//         formSendResult.textContent = 'Анкета не отправлена! Попробуйте позже.';
+//         formSendResult.style.color = 'red';
 
-    } finally {
-        formBtn.textContent = 'Отправить';
-    }
-})
+//     } finally {
+//         formBtn.textContent = 'Отправить';
+//     }
+// })
 
 // const modelController2 = ({ modal, btnOpen, btnClose, }) => {
 //     const buttonElems = document.querySelectorAll(btnOpen);

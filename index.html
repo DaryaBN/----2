@@ -9,6 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Oranienbaum&family=Playfair+Display+SC&display=swap" rel="stylesheet">    
 	<title>Бизнес Сити</title>
+    <link rel="shortcut icon" href="/img/бизнес сити лого.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/img/бизнес сити лого.png" />
+    <meta name="theme-color" content="#ffffff" />
+        <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="img/бизнес сити лого.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="stylesheet" href="/style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -21,7 +32,7 @@
                         <li><a href="company.html">О компании</a></li>
                         <li><a href="#services">Услуги</a></li>
                         <li><a href="job _openings.html">Вакансии</a></li>
-                        <li><a href="#map">Контакты</a></li>
+                        <li><a class="contacts-mod-wid">Контакты</a></li>
                     </ul> 
                     <div class="novebar_collback">  
                         <button class="buttonOpen" type="button" name="run_script">Оставить заявку</button>
@@ -36,7 +47,7 @@
                             <li><a href="company.html">О компании</a></li>
                             <li><a href="#services">Услуги</a></li>
                             <li><a href="job _openings.html">Вакансии</a></li>
-                            <li><a href="#map">Контакты</a></li>
+                            <li><a class="contacts-mod-wid">Контакты</a></li>
                             <li><a  class="collback buttonOpen">Оставить заявку</a></li>
                     </div>
                     </div>
@@ -47,19 +58,25 @@
             <div class="slideshow">
                 <div class="slide exmplSlieder">
                     <div class="numbertext">1 / 3</div>
-                    <video  autoplay="autoplay" loop="loop" class="slide__img" src="/img/рек.Конс.mp4" controls></video>
+                    <video autoplay muted loop class="slide__img">
+                        <source type="video/mp4"  src="/img/13.mp4">
+                    </video>
                     <!-- <video  class="slide__img" > <source src="img/рек.бесплатно.mp4"><video>  -->
                         <!-- class="slide__img"> -->
                     <!-- <div class="slide__descr">Caption Text</div> -->
                 </div>
                 <div class="slide">
                     <div class="numbertext">2 / 3</div>
-                    <video  autoplay="autoplay" loop="loop" class="slide__img" src="/img/рек.бесплатно.mp4" controls></video>
+                    <video autoplay muted loop class="slide__img">
+                        <source type="video/mp4"  src="/img/11.mp4">
+                    </video>
                     <!-- <div class="slide__descr">Caption Two</div> -->
                 </div>
                 <div class="slide">
                     <div class="numbertext">3 / 3</div>
-                    <video  autoplay="autoplay" loop="loop" class="slide__img" src="/img/рек.Бизнес.mp4" controls></video>
+                    <video autoplay muted loop class="slide__img">
+                        <source type="video/mp4"  src="/img/14.mp4">
+                    </video>
                     <!-- <div class="slide__descr">Caption Three</div> -->
                 </div>
                 <div class="slideshow__nav slideshow__nav--prev" data-way="prev">&#10094;</div>
@@ -73,7 +90,7 @@
             </div>
             </div>
             <div class="services_blok"  id="services" id="services_id">
-                <div class="services_blok_anim_left _anim-items">
+                <div class="services_blok_anim_left _anim-items _anim-no-hide">
                     <a href="outsourcing.html" alt="аутсорсинг" target="_blank">
                         <div class="card_services">
                             <div class="wrapper_services">
@@ -84,7 +101,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="services_blok_anim_right _anim-items">
+                <div class="services_blok_anim_right _anim-items _anim-no-hide">
                     <a href="consulting.html" alt="консалтинг" target="_blank">
                     <div class="card_services">
                         <div class="wrapper_services">
@@ -97,7 +114,7 @@
                 </div>
             </div>
             <div class="services_blok">
-                <div class="services_blok_anim_left _anim-items">
+                <div class="services_blok_anim_left _anim-items _anim-no-hide">
                     <a href="courses.html" alt="курсы повышения квалификации" target="_blank">
                         <div class="card_services">
                             <div class="wrapper_services">
@@ -108,7 +125,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="services_blok_anim_right _anim-items">
+                <div class="services_blok_anim_right _anim-items _anim-no-hide">
                     <a href="turnkey_business.html" alt="бизнес под ключ" target="_blank">
                     <div class="card_services">
                         <div class="wrapper_services">
@@ -120,16 +137,14 @@
                     </a>
                 </div>
             </div>
-            <div class="application_form _anim-items">
-                <form class="form_blok">
+            <div class="application_form _anim-items _anim-no-hide">
+                <form id="form_blok_webpage">
                     <div class="form_type">
                     <div class="form_close_application_form">
                     <div>
                     <div class="form_title1">Закажите обратный звонок и наш консультант свяжется с вами</div>
-                    <div class="form__send-result"></div>
                     </div>
                 </div>
-                <div class="form__send-result"></div>
                 <div class="form_item">
                     <div class="form_img">
                         <img src="/img/портфель.png">
@@ -138,7 +153,7 @@
                     <label for="formService">Услуга:</label>
                     </div>
                     <div class="form2">
-                    <select id="formService" name="Service" class="Service">
+                    <select id="webpage_s" name="Service" class="Service">
                         <option>Аутсорсинг</option>
                         <option>Консалтинг</option>
                         <option>Курсы повышения квалификации</option>
@@ -155,7 +170,7 @@
                     <label for="formData">Дата:</label>
                     </div>
                     <div class="form2">
-                    <input type="date" id="formData" class="Dat" name="Data" required>
+                    <input type="date" id="webpage_d" class="Dat" name="Data" required>
                     
                     </div>
                 </div>
@@ -167,7 +182,7 @@
                     <label for="formTime">Время:</label>
                     </div>
                     <div class="form2">
-                    <select id="formTime" class="Tm" name="Time">
+                    <select id="webpage_t" class="Tm" name="Time">
                         <option>10:00</option>
                         <option>10:30</option>
                         <option>11:00</option>
@@ -200,7 +215,7 @@
                     <label for="name">ФИО:</label>
                 </div>
                 <div class="form2">
-                    <input type="text" id="name_City" name="speaker_name" class="name_req" placeholder="Иванов Александр Сергеевич" required/>
+                    <input type="text" id="webpage_n" name="speaker_name" class="name_req" placeholder="Иванов Александр Сергеевич" required/>
                 </div>
                 </div>
                 <div class="form_item">
@@ -211,7 +226,7 @@
                     <label for="Sity">Город:</label>
                     </div>
                     <div class="form2">
-                    <input type="text" id="pass_City" name="speaker_sity" class="sity_req" placeholder="Пермь" required/>
+                    <input type="text" id="webpage_c" name="speaker_sity" class="sity_req" placeholder="Пермь" required/>
                     </div>
                 </div>
                 <div class="form_item">
@@ -222,23 +237,23 @@
                     <label for="phone">Телефон:</label>
                     </div>
                     <div class="form2">
-                    <input type="phoneNumber" id="phone_City" name="number_phone" class="phone_req _phone" placeholder="+7 (999) 999-99-99" pattern="(\+?[0-9\s\-\(\)]+)" required/>
+                    <input type="phoneNumber" id="webpage_p" name="number_phone" class="tel" placeholder="+7 (999) 999-99-99" pattern="(\+?[0-9\s\-\(\)]+)" required/>
                     </div>
                 </div>
                 <div class="form__submit-button">
-                    <button type="submit" class="more-button" style="cursor: pointer">
+                    <button type="submit"  id="form_blok_webpage_buttun" class="more-button" style="cursor: pointer">
                         оставить заявку
                     </button>
                 </div>  
             </form>
             </div>
             <div class="services_blok2" id="map">
-                <div class="services_blok_anim_left _anim-items">
+                <div class="services_blok_anim_left _anim-items _anim-no-hide">
                     <div class="map_color">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A24898da903031dd8d7685e8ae6477f368d7d78ba692ba0a55de0cb4f8873c129&amp;width=400&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+											<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A24898da903031dd8d7685e8ae6477f368d7d78ba692ba0a55de0cb4f8873c129&amp;width=400&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
-                <div class="services_blok_anim_right _anim-items">
+                <div class="services_blok_anim_right _anim-items _anim-no-hide">
                     <div class="contacts_blok">
                         <div class="contacts_services">КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
                         <div class="contacts_services_line"></div>
@@ -271,9 +286,62 @@
                 </div>
             </div>
         </main>
-        <div class="application modal">
+
+        <div class="contakt-info-modal">
+            <div class="contacts_blok_mod">
+                <div class="close_contakt-info-modal">
+                    <img
+                    class="catalog_of_services_close"
+                    src="/img/Vectorкрестик.svg"
+                    alt="закрыть"
+                    />
+                </div>
+            <div class="map_contacts" >
+            <div class="map_color">
+							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A24898da903031dd8d7685e8ae6477f368d7d78ba692ba0a55de0cb4f8873c129&amp;width=400&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+            <div class="contacts_blok">
+                <div class="contacts_services">КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
+                <div class="contacts_services_line"></div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/место.png" />
+                    </div>
+                    <div class="contacts_services_phone_text">
+                    Ленина 92, БЦ "Славяновский плаза"
+                    </div>
+                </div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/тел.jpg" />
+                    </div>
+                    <div class="contacts_services_phone_text">+7 (993) 501-06-28</div>
+                </div>
+                <div class="contacts_services_phone">
+                    <div class="contacts_services_phone_img">
+                    <img src="/img/почта.png" />
+                    </div>
+                    <div class="contacts_services_phone_text">
+                    business.city59@gmail.com
+                    </div>
+                </div>
+                <div class="contacts_services_text">Мы в социальных сетях:</div>
+                <div class="contacts_services_icons">
+                    <a
+                    class="contacts_services_telegrem"
+                    href="https://t.me/Business_city59"
+                    >
+                    <img src="/img/тг.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+        <div class="application modal opacity_m">
                 <div class="form_modal">
-                <form class="form">
+                <form id="form">
                         <div class="form_close">
                         <div>
                         <div class="form_title">Закажите обратный звонок и наш консультант свяжется с вами</div>
@@ -376,18 +444,18 @@
                         <label for="phone">Телефон:</label>
                         </div>
                         <div class="form2">
-                        <input type="phoneNumber" id="phone_C" name="number_phone" class="phone_req _phone" placeholder="+7 (999) 999-99-99" pattern="(\+?[0-9\s\-\(\)]+)" required/>
+                        <input type="text" id="phone_C" name="number_phone" class="tel" placeholder="+7(000)000-00-00" required/>
                         </div>
                     </div>
                     <div class="form__submit-button">
-                        <button type="submit" class="more-button" style="cursor: pointer">
+                        <button type="submit" id="bt_send" class="more-button" style="cursor: pointer">
                             оставить заявку
                         </button>
                     </div>
                     </div>  
                 </form>
             </div>
-            <div class="form__send-result_blok">
+            <div class="form__send-result_blok_web">
                 <p class="send-result_blok">Спасибо за ваше сообщение! Мы свяжемся с вами в выбранное вами время.</p>
             </div>
         <footer>
@@ -398,6 +466,67 @@
                 <a href="#"><img src="img/pngwing.com.png" alt="Insagram"></a>
            </div>
         </footer>
-        <script crossorigin type="module" src="index.js"></script>   
+        <script crossorigin type="module" src="index.js"></script>
+				<script>
+					const TELEGRAM_BOT_TOKEN = '6447117307:AAH7HztVqr5kIgkb0kSxHAeglxoB74-8-5k';
+					const TELEGRAM_CHAT_ID = '-1001881302219';
+					const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+					const comwebpage_reviews_butt = document.getElementById('form_blok_webpage_buttun')
+          const comwebpage_reviews = document.getElementById('form_blok_webpage');
+
+          if(comwebpage_reviews_butt) {
+            comwebpage_reviews.addEventListener('submit', 
+            async function sendEmailTelegram(event) {
+            event.preventDefault();
+            const form = event.target;
+            let webpage_name = document.getElementById('webpage_n').value;
+            let webpage_phone = document.getElementById('webpage_p').value;
+            let webpage_city = document.getElementById('webpage_c').value;
+						let webpage_dat = document.getElementById('webpage_d').value;
+						let webpage_teim = document.getElementById('webpage_t').value;
+						let webpage_service = document.getElementById('webpage_s').value;
+
+            const webpage_result = document.querySelector('.send-result_blok')
+            const modalElem_webpage_result = document.querySelector('.form__send-result_blok_web');
+            
+            const text_webpage = `Заявка с сайта!\nимя: ${webpage_name}\nТелефон: ${webpage_phone}\nГород: ${webpage_city} \nДата: ${webpage_dat}\nВремя ${webpage_teim}\nУслуга: ${webpage_service}`;
+				    console.log(text_webpage)
+            try {
+              comwebpage_reviews_butt.textContent = 'Loading...';
+                const response = await fetch(API, {
+                  method: "POST",
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: text_webpage,
+                  })
+                })
+                if (response.ok) {
+									modalElem_webpage_result.style.cssText = `
+                  display: flex;
+                  visibility: visible;
+                  opacity: 1;
+                  `
+                  setTimeout(() => modalElem_webpage_result.style.display = 'none', 3000);
+                  
+                  form.reset()
+                } else {
+                  throw new Error(response.statusText);
+                }
+              } catch (error) {
+                console.error(error);
+                webpage_result.textContent = 'Заявка не отправлена! Попробуйте позже.';
+                webpage_result.style.color = 'red';
+
+              } finally {
+                comwebpage_reviews_butt.textContent = 'Отправить';
+              }
+          })
+        }
+
+				</script>
     </body>
 </html>
