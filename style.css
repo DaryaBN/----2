@@ -531,12 +531,10 @@ select:after {
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 500px;
   background-size: cover;
 }
 .fullscreen_image {
   width: 100%;
-  height: 500px;
   vertical-align: middle; 
 }
 .fullscreen_image img {
@@ -556,12 +554,14 @@ select:after {
 .page {
   /* position: relative;
   top: 500px; */
-  z-index: 2;
+  /* z-index: 2; */
 }
 ._container {
-  max-width: 1400px;
-  padding: 0px 0px 0px 90px;
-  margin: 0 auto;
+  width: 80%;
+  /* text-align: center; */
+  /* max-width: 1400px; */
+  /* padding: 0px 0px 0px 90px; */
+  margin: 20px auto 40px auto
 }
 .fullscreen {
   /* position: relative; */
