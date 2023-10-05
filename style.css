@@ -46,7 +46,7 @@ header {
 .novebar-menu{
   display: block;
   list-style-type: none;
-  font-size: 12.5px;
+  font-size: 16.5px;
   text-transform: uppercase;
   margin-bottom: 0;
 }
@@ -99,7 +99,7 @@ button[name="run_script"] {
   text-transform: uppercase;
   font-weight: bold;
   color: #444442;
-  font-size: 11px;
+  font-size: 18px;
   font-family: inherit;
 }
 button[name="run_script"]:hover { 
@@ -322,7 +322,7 @@ footer{
   border: none;
   margin: 0 auto 0 auto;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-bottom: 75px;
   font-family: inherit;
 }
 .more-button:hover{
@@ -420,6 +420,9 @@ select:after {
   color: #000;
   text-align: center;
   text-transform: uppercase;
+}
+.services_blok_flex{
+  display: flex;
 }
 .services_blok{
   width: 900px;
@@ -1701,5 +1704,13 @@ input[type='text']::placeholder {
   }
   input[type='text']::placeholder {
     font-size: 14px;
+  }
+  .services_blok_flex{
+    display: block;
+  }
+}
+@media (max-width: 1492px) {
+  .services_blok_flex{
+    display: block;
   }
 }
