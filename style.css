@@ -423,6 +423,8 @@ select:after {
 }
 .services_blok_flex{
   display: flex;
+  width: 1500px;
+  margin: 0 auto 0 auto;
 }
 .services_blok{
   width: 900px;
@@ -433,7 +435,7 @@ select:after {
   align-items: center;
 }
 .services_blok_anim_left{
-  transform: translate(-40%, 0px);
+  transform: translate(-10px 0px);
   opacity: 0;
   transition: all 0.8s ease 0.3s;
 }
@@ -442,7 +444,7 @@ select:after {
   transform: translate(0px, 0px)
 }
 .services_blok_anim_right{
-  transform: translate(40%, 0px);
+  transform: translate(10px, 0px);
   opacity: 0;
   transition: all 0.8s ease 0.3s;
 }
@@ -1335,7 +1337,7 @@ input[type='text']::placeholder {
   -ms-user-select: none;      
   user-select: none; 
 }
-@media (max-width: 830px) {
+@media (max-width: 910px) {
 
   html {
     height: 100%;
@@ -1489,6 +1491,11 @@ input[type='text']::placeholder {
     transform: translate(10px, 0px);
     opacity: 0;
     transition: all 1.9s ease 0.3s;
+  }
+  .services_blok_anim_left{
+    transform: translate(-30px, 0px);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s;
   }
   .application_form{
     list-style: none;
@@ -1707,10 +1714,24 @@ input[type='text']::placeholder {
   }
   .services_blok_flex{
     display: block;
+    width: auto;
+    margin: 0 auto 0 auto;
   }
 }
 @media (max-width: 1492px) {
   .services_blok_flex{
     display: block;
+    width: auto;
+    margin: 0 auto 0 auto;
+  }
+  .services_blok_anim_right{
+    transform: translate(40px, 0px);
+    opacity: 0;
+    transition: all 0.9s ease 0.3s;
+  }
+  .services_blok_anim_left{
+    transform: translate(-40px, 0px);
+    opacity: 0;
+    transition: all 0.9s ease 0.3s;
   }
 }

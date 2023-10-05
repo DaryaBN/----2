@@ -204,7 +204,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 const TELEGRAM_BOT_TOKEN = '6447117307:AAH7HztVqr5kIgkb0kSxHAeglxoB74-8-5k';
-const TELEGRAM_CHAT_ID = '-1001881302219';
+const TELEGRAM_CHAT_ID = '-1001608170051';
 const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
 
 const button_send = document.getElementById('bt_send')
