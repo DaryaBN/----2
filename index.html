@@ -242,6 +242,17 @@
                     <input type="phoneNumber" id="webpage_p" name="number_phone" class="tel" placeholder="+7 (999) 999-99-99" pattern="(\+?[0-9\s\-\(\)]+)" required/>
                     </div>
                 </div>
+                <div class="form_item">
+                    <div class="form_img">
+                        <img src="/img/883226.png">
+                    </div>
+                    <div class="form1">
+                    <label for="Sity">Kомментарий:</label>
+                    </div>
+                    <div class="form2">
+                    <input type="text" id="webpage_com" name="speaker_com" class="com_req"  placeholder="" />
+                    </div>
+                </div>
                 <div class="form__submit-button">
                     <button type="submit"  id="form_blok_webpage_buttun" class="more-button" style="cursor: pointer">
                         оставить заявку
@@ -265,12 +276,12 @@
                             </div>
                             <div class="contacts_services_phone_text">Ленина 92, БЦ "Славяновский плаза"</div>
                         </div>
-                        <div class="contacts_services_phone">
+                        <!-- <div class="contacts_services_phone">
                             <div class="contacts_services_phone_img">
                                 <img src="/img/тел.jpg">
                             </div>
                             <div class="contacts_services_phone_text">+7 (993) 501-06-28</div>
-                        </div>
+                        </div> -->
                         <div class="contacts_services_phone">
                             <div class="contacts_services_phone_img">
                                 <img src="/img/почта.png">
@@ -443,6 +454,17 @@
                         <input type="text" id="phone_C" name="number_phone" class="tel" placeholder="+7(000)000-00-00" required/>
                         </div>
                     </div>
+                    <div class="form_item">
+                        <div class="form_img">
+                            <img src="/img/883226.png">
+                        </div>
+                        <div class="form1">
+                        <label for="Sity">Kомментарий:</label>
+                        </div>
+                        <div class="form2">
+                        <input type="text" id="webpage_coment" name="speaker_com" class="com_req"  placeholder="" />
+                        </div>
+                    </div>
                     <div class="form__submit-button">
                         <button type="submit" id="bt_send" class="more-button" style="cursor: pointer">
                             оставить заявку
@@ -479,14 +501,15 @@
             let webpage_name = document.getElementById('webpage_n').value;
             let webpage_phone = document.getElementById('webpage_p').value;
             let webpage_city = document.getElementById('webpage_c').value;
-						let webpage_dat = document.getElementById('webpage_d').value;
-						let webpage_teim = document.getElementById('webpage_t').value;
-						let webpage_service = document.getElementById('webpage_s').value;
+            let webpage_dat = document.getElementById('webpage_d').value;
+            let webpage_teim = document.getElementById('webpage_t').value;
+            let webpage_service = document.getElementById('webpage_s').value;
+            let comen = document.getElementById('webpage_com').value;
 
             const webpage_result = document.querySelector('.send-result_blok')
             const modalElem_webpage_result = document.querySelector('.form__send-result_blok_web');
             
-            const text_webpage = `Заявка с сайта!\nимя: ${webpage_name}\nТелефон: ${webpage_phone}\nГород: ${webpage_city} \nДата: ${webpage_dat}\nВремя ${webpage_teim}\nУслуга: ${webpage_service}`;
+            const text_webpage = `Заявка с сайта!\nимя: ${webpage_name}\nТелефон: ${webpage_phone}\nГород: ${webpage_city} \nДата: ${webpage_dat}\nВремя ${webpage_teim}\nУслуга: ${webpage_service}\nKомментарий: ${comen}`;
 				    console.log(text_webpage)
             try {
               comwebpage_reviews_butt.textContent = 'Loading...';

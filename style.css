@@ -254,7 +254,7 @@ footer{
 }
 .form_modal{
   width: 362px;
-  height: auto;
+  height: 620px;
   background: #ffffff;
   border-radius: 6px;
   position: absolute;
@@ -275,8 +275,8 @@ footer{
   /* flex-direction: column; */
 }
 .form1 {
-  width: 75px;
-  margin: 0 10px 0 10px;
+  /* width: 75px; */
+  margin: 0 5px 0 10px;
   color: #000;
 }
 .form2 {
@@ -298,12 +298,15 @@ footer{
 }
 .form_img img{
   /* position: absolute; */
-  width: 80%;
+  width: 25px;
   height: 100%;
   top: 0;
   left: 0;
   object-fit: cover;
 }
+/* .com_req{
+  overflow-y: scroll;
+} */
 .more-button {
   border-radius: 12px;
   background: rgb(24, 23, 23);
@@ -1493,7 +1496,7 @@ input[type='text']::placeholder {
     transition: all 1.9s ease 0.3s;
   }
   .services_blok_anim_left{
-    transform: translate(-30px, 0px);
+    transform: translate(-10px, 0px);
     opacity: 0;
     transition: all 0.8s ease 0.3s;
   }
@@ -1716,6 +1719,33 @@ input[type='text']::placeholder {
     display: block;
     width: auto;
     margin: 0 auto 0 auto;
+  }
+  input[type='text'],
+  input[type='phoneNumber'] {
+    width: 95%;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    height: 22px;
+    color: black;
+    background: scroll;
+    font-size: 14px;
+    outline: 0;
+    outline-offset: 0;
+    font-family: Lato;
+    overflow-y: scroll;
+  }
+  .form_modal{
+    width: 90%;
+    height: 95%;
+    background: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 10px; 
   }
 }
 @media (max-width: 1492px) {

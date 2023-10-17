@@ -221,6 +221,8 @@ if(button_send) {
       let data_send = document.getElementById('formData').value;
       let time_send = document.getElementById('formTime').value;
       let servise_send = document.getElementById('formService').value;
+      let comm = document.getElementById('webpage_coment').value;
+     
 
       const opacity_mod = document.querySelector('.opacity_m');
       const men_br = document.querySelector('.menu')
@@ -229,7 +231,7 @@ if(button_send) {
       const res_send = document.querySelector('.send-result_blok')
       const modalElem_res_send = document.querySelector('.form__send-result_blok_web');
     
-      const text_webpage = `Заявка с сайта!\nимя: ${name_send}\nТелефон: ${phone_send}\nГород: ${city_send} \nДата: ${data_send}\nВремя ${time_send}\nУслуга: ${servise_send}`;
+      const text_webpage = `Заявка с сайта!\nимя: ${name_send}\nТелефон: ${phone_send}\nГород: ${city_send} \nДата: ${data_send}\nВремя ${time_send}\nУслуга: ${servise_send}\nКомментарийа: ${comm}`;
       console.log(text_webpage)
       try {
         button_send.textContent = 'Loading...';
